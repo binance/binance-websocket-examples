@@ -10,7 +10,7 @@
     "ws": "^6.1.3"
   },
   "devDependencies": {
-    "@babel/cli": "^7.1.0",
+    "@babel/cli": "^7.12.1",
     "@babel/core": "^7.1.0",
     "@babel/node": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
