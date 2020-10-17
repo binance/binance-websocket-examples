@@ -47,14 +47,7 @@ const privateRequest = (apiKey, apiSecret, baseURL) => (
 };
 
 const spotPrivateRequest = (apiKey, apiSecret, baseURL = 'https://api.binance.com') => privateRequest(apiKey, apiSecret, baseURL);
-
-const futuresPrivateRequest = (apiKey, apiSecret, testnet) => {
-  let baseURL = 'https://fapi.binance.com';
-  if (testnet) {
-    baseURL = 'https://testnet.binancefuture.com';
-  }
-  return privateRequest(apiKey, apiSecret, baseURL);
-};
+const futuresPrivateRequest = (apiKey, apiSecret, baseURL = 'https://fapi.binance.com') => privateRequest(apiKey, apiSecret, baseURL);
 
 const deliveryFuturesPrivateRequest = (apiKey, apiSecret, testnet) => {
   let baseURL = 'https://dapi.binance.com';

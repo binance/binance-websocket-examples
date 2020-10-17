@@ -25,8 +25,11 @@ APIKEY=xxxxxx APISECET=xxxxx npm run margin-user
 ## Futures user data stream
 
 ```bash
-# get user data steam
+# get user data steam on production
 APIKEY=xxxxxx APISECET=xxxxx npm run futures-user
+
+# on testnet
+APIKEY=xxxxxx APISECET=xxxxx WSS_BASE_URL="wss://stream.binancefuture.com/" HTTP_BASE_URL="https://testnet.binancefuture.com/" npm run futures-user
 ```
 
 ## Delivery Futures user data stream
