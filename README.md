@@ -49,7 +49,13 @@ npm run multi-stream
 ## Spot trade stream delay monitoring
 
 ```bash
-npm run monitor-spot
+npm run monitor-spot-trade
+```
+
+## Spot depth stream delay monitoring
+
+```bash
+npm run monitor-spot-depth
 ```
 
 ## Futures depth stream delay monitoring
