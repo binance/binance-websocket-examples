@@ -4,7 +4,7 @@
   "description": "examples codes to demonstrate how to listen Binance Websocket Server",
   "main": "index.js",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "big.js": "^5.2.2",
     "ramda": "^0.26.1",
     "ws": "^6.1.3"
