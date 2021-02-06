@@ -46,6 +46,27 @@ const privateRequest = (apiKey, apiSecret, baseURL) => (
   });
 };
 
+const publicDataRequest = (apiKey, baseURL) => (
+  method = 'GET',
+  path,
+  data = {},
+) => {
+  if (!apiKey) {
+    throw new Error('API key is missing');
+  }
+
+  return getRequestInstance({
+    baseURL,
+    headers: {
+      'content-type': 'application/json',
+      'X-MBX-APIKEY': apiKey,
+    },
+    method,
+    url: path,
+  });
+};
+
+const spotMarketDataRequest = (apiKey, baseURL = 'https://api.binance.com') => publicDataRequest(apiKey, baseURL);
 const spotPrivateRequest = (apiKey, apiSecret, baseURL = 'https://api.binance.com') => privateRequest(apiKey, apiSecret, baseURL);
 const futuresPrivateRequest = (apiKey, apiSecret, baseURL = 'https://fapi.binance.com') => privateRequest(apiKey, apiSecret, baseURL);
 
@@ -62,6 +83,7 @@ export {
   publicRequest,
   privateRequest,
   spotPrivateRequest,
+  spotMarketDataRequest,
   futuresPrivateRequest,
   deliveryFuturesPrivateRequest,
 };
