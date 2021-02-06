@@ -16,7 +16,7 @@ SYMBOL=bnbusdt npm run orderbook
 
 ```bash
 # get user data steam
-APIKEY=xxxxxx APISECET=xxxxx npm run user
+APIKEY=xxxxxx npm run user
 
 # get margin account update from websocket
 APIKEY=xxxxxx APISECET=xxxxx npm run margin-user
