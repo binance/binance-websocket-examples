@@ -15,7 +15,7 @@ export default async function createApp() {
   const socketApi = new SocketClient(`ws/${listenKey}`);
   socketApi.setHandler('executionReport', (params) => logger.info(params));
   socketApi.setHandler('outboundAccountPosition', (params) => logger.info(params));
-  renewListenKey(APIKEY, APISECET)(listenKey);
+  renewListenKey(APIKEY)(listenKey);
 }
 
 createApp();

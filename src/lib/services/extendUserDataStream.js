@@ -1,6 +1,6 @@
-import { spotPublicRequest } from '../requestClient';
+import { spotMarketDataRequest } from '../requestClient';
 
-const extendUserDataStream = (apiKey, apiSecret) => (listenKey) => spotPublicRequest(apiKey, apiSecret)('PUT', '/api/v1/userDataStream', { listenKey })
-  .put(`/api/v1/userDataStream?listenKey=${listenKey}`);
+const extendUserDataStream = (apiKey) => (listenKey) => spotMarketDataRequest(apiKey)('PUT', '/api/v3/userDataStream', { listenKey })
+  .put(`/api/v3/userDataStream?listenKey=${listenKey}`);
 
 export default extendUserDataStream;
