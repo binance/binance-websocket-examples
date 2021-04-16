@@ -16,7 +16,7 @@ export default async function createApp() {
 
   socketApi.setHandler('depthUpdate', (params) => orderbookUpdateFromWebsocket(params)(orderBook));
 
-  // leave a time gap to wait for websokect connection first
+  // leave a time gap to wait for websocket connection first
   setTimeout(() => {
     orderBookUpdateFromRESTfulAPI(orderBook);
   }, 3000);
