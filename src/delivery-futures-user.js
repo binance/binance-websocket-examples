@@ -5,12 +5,12 @@ import SocketClient from './lib/socketClient';
 import logger from './lib/logger';
 
 const APIKEY = process.env.APIKEY || '';
-const APISECET = process.env.APISECET || '';
+const APISECRET = process.env.APISECRET || '';
 const WS_BASEURL = process.env.WS_BASEURL || 'wss://dstream.binance.com/';
 
 export default async function createApp() {
   logger.info('start application');
-  const listenKey = await getDeliveryListenKey(APIKEY, APISECET, false);
+  const listenKey = await getDeliveryListenKey(APIKEY, APISECRET, false);
 
   logger.info('key received.', listenKey);
   const socketApi = new SocketClient(`ws/${listenKey}`, WS_BASEURL);

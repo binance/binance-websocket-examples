@@ -4,7 +4,7 @@ import getUserDataStream from '../../../src/lib/services/getUserDataStream';
 describe('getUserDataStream', () => {
 
   const apiKey = 'xxxx';
-  const apiSecet = 'yyyyy';
+  const apiSecret = 'yyyyy';
   const resp = { data: { listenKey: 'xxxxxxxx' } };
 
   beforeEach(() => {
@@ -12,6 +12,6 @@ describe('getUserDataStream', () => {
   });
 
   it('should returun return listen key', async () => {
-    await expect(getUserDataStream(apiKey, apiSecet)).resolves.toEqual('xxxxxxxx');
+    await expect(getUserDataStream(apiKey, apiSecret)).resolves.toEqual('xxxxxxxx');
   });
 });
