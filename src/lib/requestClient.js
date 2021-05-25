@@ -24,8 +24,12 @@ const privateRequest = (apiKey, apiSecret, baseURL) => (
   path,
   data = {},
 ) => {
-  if (!apiKey || !apiSecret) {
+  if (!apiKey) {
     throw new Error('API key is missing');
+  }
+
+  if (!apiSecret) {
+    throw new Error('API secret is missing');
   }
 
   const timestamp = Date.now();

@@ -4,7 +4,7 @@ import extendUserDataStream from '../../../src/lib/services/extendUserDataStream
 describe('extendUserDataStream', () => {
 
   const apiKey = 'xxxx';
-  const apiSecet = 'yyyyy';
+  const apiSecret = 'yyyyy';
   const resp = {};
 
   beforeEach(() => {
@@ -12,6 +12,6 @@ describe('extendUserDataStream', () => {
   });
 
   it('should extend the data stream', async () => {
-    await expect(extendUserDataStream(apiKey, apiSecet)('xxxxx')).resolves.toBeDefined();
+    await expect(extendUserDataStream(apiKey, apiSecret)('xxxxx')).resolves.toBeDefined();
   });
 });
