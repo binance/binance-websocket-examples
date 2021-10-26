@@ -67,7 +67,6 @@ npm run monitor-futures
 ## How to setup
 
 ```bash
-
 npm install
 
 # run test
