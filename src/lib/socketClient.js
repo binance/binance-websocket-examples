@@ -36,16 +36,12 @@ class SocketClient {
     this._ws.onmessage = (msg) => {
       try {
         const message = JSON.parse(msg.data);
-        if (message.e) {
-          if (this._handlers.has(message.e)) {
-            this._handlers.get(message.e).forEach((cb) => {
-              cb(message);
-            });
-          } else {
-            logger.warn('Unprocessed method', message);
-          }
+        if (message.e && this._handlers.has(message.e)) {
+          this._handlers.get(message.e).forEach(cb => {
+            cb(message);
+          });
         } else {
-          logger.warn('Unprocessed method', message);
+          logger.warn('Unknown method', message);
         }
       } catch (e) {
         logger.warn('Parse message failed', e);
