@@ -12,11 +12,14 @@ export default async function createApp() {
     'bnbbtc',
   ];
 
-  pairs = pairs.map((pair) => `${pair}@depth5`).join('/');
-  logger.info(pairs);
+  pairs = pairs.map((pair) => `${pair}@depth5`);
+  const pairString = pairs.join('/');
+  logger.info(pairString);
 
-  const socketApi = new SocketClient(`stream?streams=${pairs}`);
-  socketApi.setHandler('depthUpdate', (params) => logger.info(JSON.stringify(params)));
+  const socketApi = new SocketClient(`stream?streams=${pairString}`);
+  pairs.forEach(pair => {
+    socketApi.setHandler(pair, (params) => logger.info(JSON.stringify(params)));
+  })
 }
 
 createApp();
