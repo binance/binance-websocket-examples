@@ -36,7 +36,9 @@ class SocketClient {
     this._ws.onmessage = (msg) => {
       try {
         const message = JSON.parse(msg.data);
-        if (message.e && this._handlers.has(message.e)) {
+        if (this.isMultiStream(message)) {
+          this._handlers.get(message.stream).forEach(cb => cb(message));
+        } else if (message.e && this._handlers.has(message.e)) {
           this._handlers.get(message.e).forEach(cb => {
             cb(message);
           });
@@ -49,6 +51,10 @@ class SocketClient {
     };
 
     this.heartBeat();
+  }
+
+  isMultiStream(message) {
+    return message.stream && this._handlers.has(message.stream);
   }
 
   heartBeat() {
