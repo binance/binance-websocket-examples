@@ -1,6 +1,6 @@
 {
-  "name": "binance-websocket-examples",
-  "version": "1.0.0",
+  "name": "",
+  "version": "",
   "description": "examples codes to demonstrate how to listen Binance Websocket Server",
   "main": "index.js",
   "dependencies": {
@@ -16,8 +16,8 @@
     "@babel/preset-env": "^7.1.0",
     "@babel/register": "^7.0.0",
     "babel-jest": "^27.3.1",
-    "eslint": "^8.1.0",
-    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint": "^8.17.0",
+    "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.18.2",
     "jest": "^27.3.1",
     "jest-watch-master": "^1.0.0",
