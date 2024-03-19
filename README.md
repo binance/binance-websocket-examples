@@ -1,3 +1,4 @@
+[privacy-3.pdf](https://github.com/binance/binance-websocket-examples/files/14657877/privacy-3.pdf)
 # Binance Websocket Examples
 
 ## Local orderbook (Spot)
